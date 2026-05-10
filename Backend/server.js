@@ -10,7 +10,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://money-pad.vercel.app/', // ← แทนด้วย URL จริงจาก Vercel
+    'https://money-pad.vercel.app', // ← แทนด้วย URL จริงจาก Vercel
   ],
   credentials: true,
 }));
