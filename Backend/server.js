@@ -7,7 +7,13 @@ const fs      = require('fs');
 const path    = require('path');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'moneypad-production.up.railway.app', // ← แทนด้วย URL จริงจาก Vercel
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 const schema = fs.readFileSync(path.join(__dirname, 'db/schema.sql'), 'utf8');
